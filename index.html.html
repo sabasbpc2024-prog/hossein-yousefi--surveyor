@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حسین یوسفی | نقشه برداری، UTM و اخذ سند تک برگ در قزوین</title>
+<meta name="description" content="خدمات تخصصی نقشه برداری، تهیه نقشه UTM، اخذ سند تک برگ، تفکیک اراضی و جانمایی ملک در قزوین">
+<meta name="keywords" content="حسین یوسفی, نقشه برداری قزوین, UTM قزوین, اخذ سند تک برگ">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Tahoma,'Segoe UI',sans-serif;direction:rtl;background:#fff;color:#1a1a1a;}
+:root{--green:#1a4a2e;--gold:#c9a227;--green-light:#e8f0eb;--gray:#f5f5f3;--text:#1a1a1a;--text2:#555;}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:.85rem 2rem;background:var(--green);position:sticky;top:0;z-index:10;}
+.logo{color:#fff;font-size:16px;font-weight:500;line-height:1.4;}
+.logo span{color:var(--gold);display:block;font-size:13px;font-weight:400;}
+nav ul{list-style:none;display:flex;gap:1.25rem;}
+nav ul li a{color:rgba(255,255,255,.8);font-size:13px;text-decoration:none;cursor:pointer;}
+nav ul li a:hover{color:var(--gold);}
+
+.hero{background:var(--green);padding:3.5rem 2rem 4rem;text-align:center;}
+.hero h1{color:#fff;font-size:26px;font-weight:500;margin-bottom:.5rem;}
+.hero h1 span{color:var(--gold);}
+.hero p{color:rgba(255,255,255,.75);font-size:14px;max-width:500px;margin:.75rem auto 1.5rem;line-height:1.8;}
+.badge{display:inline-block;background:var(--gold);color:#1a1a1a;padding:5px 14px;border-radius:20px;font-size:12px;font-weight:500;margin-bottom:1rem;}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-gold{padding:10px 22px;background:var(--gold);color:#1a1a1a;border:none;border-radius:8px;font-size:14px;font-family:Tahoma,sans-serif;cursor:pointer;font-weight:500;text-decoration:none;display:inline-block;}
+.btn-outline{padding:10px 22px;background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:8px;font-size:14px;font-family:Tahoma,sans-serif;cursor:pointer;text-decoration:none;display:inline-block;}
+
+section{padding:2.5rem 2rem;}
+.section-title{text-align:center;font-size:20px;font-weight:500;margin-bottom:.4rem;color:var(--green);}
+.section-sub{text-align:center;font-size:13px;color:var(--text2);margin-bottom:2rem;}
+
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:700px;margin:0 auto;}
+@media(max-width:768px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.services-grid{grid-template-columns:1fr;}}
+.scard{background:#fff;border:1px solid #e0e0d8;border-radius:12px;padding:1.25rem 1rem;text-align:center;border-top:3px solid var(--gold);}
+.scard .icon{font-size:28px;margin-bottom:.6rem;display:block;}
+.scard h3{font-size:13px;font-weight:500;line-height:1.5;}
+
+.bg-gray{background:var(--gray);}
+.checklist{max-width:600px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+.check-item{display:flex;align-items:flex-start;gap:10px;background:var(--green-light);border-radius:8px;padding:.85rem 1rem;}
+.check-item .ck{color:var(--green);font-size:20px;flex-shrink:0;line-height:1.4;}
+.check-item p{font-size:14px;line-height:1.6;}
+.orgs{background:var(--green-light);border-radius:12px;padding:1.25rem 1.5rem;max-width:600px;margin:1.5rem auto 0;text-align:center;}
+.orgs p{font-size:13px;color:var(--text2);line-height:2;}
+.orgs strong{color:var(--green);}
+.seal{display:flex;align-items:center;gap:8px;background:var(--green);color:#fff;padding:.6rem 1.2rem;border-radius:8px;font-size:13px;width:fit-content;margin:1.5rem auto;}
+.seal-icon{color:var(--gold);}
+
+.area-section{background:var(--green);padding:2.5rem 2rem;}
+.area-section .section-title{color:#fff;}
+.area-section .section-sub{color:rgba(255,255,255,.65);}
+.fast-badge{display:flex;align-items:center;gap:10px;background:rgba(201,162,39,.15);border:1px solid var(--gold);border-radius:12px;padding:1rem 1.25rem;max-width:600px;margin:0 auto 1.5rem;}
+.fast-badge .fb-icon{color:var(--gold);font-size:22px;flex-shrink:0;}
+.fast-badge p{color:#fff;font-size:14px;line-height:1.7;}
+.fast-badge p strong{color:var(--gold);}
+.cities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;max-width:660px;margin:0 auto;}
+.city-tag{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:.65rem .9rem;text-align:center;color:#fff;font-size:13px;}
+.city-note{text-align:center;color:rgba(255,255,255,.55);font-size:12px;margin-top:1rem;}
+
+.about-box{max-width:600px;margin:0 auto;background:#fff;border:1px solid #e0e0d8;border-radius:12px;padding:1.5rem;display:flex;gap:1rem;align-items:flex-start;}
+.avatar{width:60px;height:60px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff;font-size:17px;font-weight:500;flex-shrink:0;}
+.about-text h3{font-size:16px;font-weight:500;margin-bottom:.35rem;color:var(--green);}
+.about-text p{font-size:13px;color:var(--text2);line-height:1.8;}
+.stats-row{display:flex;gap:1rem;max-width:600px;margin:1rem auto 0;flex-wrap:wrap;}
+.stat-box{flex:1;min-width:120px;background:var(--green-light);border-radius:12px;padding:1rem;text-align:center;}
+.stat-box .num{font-size:20px;font-weight:500;color:var(--green);}
+.stat-box .lbl{font-size:12px;color:var(--text2);margin-top:3px;}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:14px;max-width:700px;margin:2rem auto 0;}
+.feat{text-align:center;padding:1rem;}
+.feat .f-icon{font-size:28px;margin-bottom:.5rem;display:block;}
+.feat h4{font-size:13px;font-weight:500;color:var(--green);}
+
+.contact-section{background:var(--gray);padding:3rem 2rem;}
+.contact-section .section-title{color:var(--green);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;max-width:700px;margin:0 auto;}
+@media(max-width:580px){
+  .contact-grid{grid-template-columns:1fr;}
+  nav ul{gap:.75rem;}
+  .stats-row{gap:.75rem;}
+}
+.phone-box{background:#fff;border:1px solid #e0e0d8;border-radius:12px;padding:1.25rem;text-align:center;margin-bottom:12px;}
+.phone-box .p-icon{font-size:26px;color:var(--green);margin-bottom:.5rem;display:block;}
+.phone-box a{color:var(--green);font-size:18px;font-weight:500;text-decoration:none;display:block;margin-bottom:.25rem;direction:ltr;}
+.phone-box span{font-size:12px;color:var(--text2);}
+.cform{background:#fff;border:1px solid #e0e0d8;border-radius:12px;padding:1.25rem;}
+.cform h3{color:var(--green);font-size:15px;font-weight:500;margin-bottom:1rem;}
+.cform input,.cform textarea,.cform select{width:100%;padding:9px 12px;background:var(--gray);border:1px solid #d0d0c8;border-radius:8px;color:#1a1a1a;font-family:Tahoma,sans-serif;font-size:13px;margin-bottom:10px;direction:rtl;}
+.cform textarea{height:80px;resize:vertical;}
+.cform button{width:100%;padding:10px;background:var(--green);border:none;border-radius:8px;font-family:Tahoma,sans-serif;font-size:14px;font-weight:500;cursor:pointer;color:#fff;}
+.cform button:hover{opacity:.88;}
+.success-msg{text-align:center;color:var(--green);font-size:14px;padding:.75rem;display:none;background:var(--green-light);border-radius:8px;margin-top:8px;}
+footer{text-align:center;padding:1.25rem;background:#111;color:rgba(255,255,255,.4);font-size:12px;}
+footer span{color:var(--gold);}
+.floating-call{
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--green);
+color:#fff;
+padding:12px 18px;
+border-radius:50px;
+text-decoration:none;
+font-weight:500;
+box-shadow:0 4px 12px rgba(0,0,0,.25);
+z-index:9999;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">حسین یوسفی <span>کارشناس رسمی نقشه‌برداری — قزوین</span></div>
+  <ul>
+    <li><a href="#services">خدمات</a></li>
+    <li><a href="#area">محدوده</a></li>
+    <li><a href="#about">درباره ما</a></li>
+    <li><a href="#contact">تماس</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="badge">با مهر و امضای کارشناس نظام مهندسی</div>
+  <h1>نقشه‌برداری و <span>واخذ سند تک برگ</span></h1>
+  <p>تهیه نقشه UTM برای املاک قولنامه‌ای مسکونی و زراعی جهت اخذ سند تک برگ و ارائه به تمامی ادارات — قزوین و شهرستان‌های اطراف</p>
+  <div class="hero-btns">
+    <a class="btn-gold" href="#contact">📞 تماس بگیرید</a>
+    <a class="btn-outline" href="#services">مشاهده خدمات</a>
+  </div>
+</div>
+
+<section id="services">
+  <div class="section-title">خدمات ما</div>
+  <div class="section-sub">ارائه خدمات تخصصی نقشه‌برداری با تجهیزات پیشرفته</div>
+  <div class="services-grid">
+    <div class="scard"><span class="icon">📍</span><h3>نقشه UTM و کاداستری</h3></div>
+    <div class="scard"><span class="icon">📄</span><h3>واخذ سند تک برگ</h3></div>
+    <div class="scard"><span class="icon">🏗️</span><h3>نقشه کروکی ساختمان</h3></div>
+    <div class="scard"><span class="icon">✂️</span><h3>تفکیک اراضی</h3></div>
+    <div class="scard"><span class="icon">🛸</span><h3>نقشه هوایی و قدمت بنا</h3></div>
+    <div class="scard"><span class="icon">📐</span><h3>پیاده‌سازی فونداسیون</h3></div>
+  </div>
+</section>
+
+<section class="bg-gray">
+  <div class="section-title">جزئیات خدمات</div>
+  <div class="section-sub">آنچه برای شما انجام می‌دهیم</div>
+  <div class="checklist">
+    <div class="check-item"><span class="ck">✅</span><p>تهیه گواهی مختصات ملک جهت اخذ سند مالکیت</p></div>
+    <div class="check-item"><span class="ck">✅</span><p>جانمایی ملک طبق سند دفترچه‌ای و سند تک برگ</p></div>
+    <div class="check-item"><span class="ck">✅</span><p>تفکیک اراضی کشاورزی، مشاع و قطعه‌بندی و چهار میخ کردن قطعات تفکیکی</p></div>
+    <div class="check-item"><span class="ck">✅</span><p>تهیه نقشه‌های هوایی و قدمت بنا برای تمامی ارگان‌ها</p></div>
+    <div class="check-item"><span class="ck">✅</span><p>تهیه نقشه کروکی ساختمان</p></div>
+    <div class="check-item"><span class="ck">✅</span><p>پیاده‌سازی فونداسیون، آکس ستون و شاقولی</p></div>
+  </div>
+  <div class="orgs">
+    <p>قابل ارائه به تمامی ادارات:<br>
+    <strong>ثبت اسناد، شهرداری، بنیاد مسکن، جهاد کشاورزی، منابع طبیعی، دهیاری، آب، برق و گاز و...</strong></p>
+  </div>
+  <div class="seal"><span class="seal-icon">🛡️</span> با مهر و امضای کارشناس رسمی نظام مهندسی</div>
+</section>
+
+<div class="area-section" id="area">
+  <div class="section-title">محدوده فعالیت</div>
+  <div class="section-sub">قزوین و تمامی شهرستان‌ها و روستاهای اطراف</div>
+  <div class="fast-badge">
+    <span class="fb-icon">⚡</span>
+    <p><strong>تحویل نقشه در سریع‌ترین زمان ممکن و با بالاترین دقت</strong><br>پوشش کامل استان قزوین از شهر تا روستا</p>
+  </div>
+  <div class="cities-grid">
+    <div class="city-tag">📍 قزوین</div>
+    <div class="city-tag">📍 شهرستان البرز</div>
+    <div class="city-tag">📍 آبیک</div>
+    <div class="city-tag">📍 الموت غربی</div>
+    <div class="city-tag">📍 الموت شرقی</div>
+    <div class="city-tag">📍 کوهین</div>
+    <div class="city-tag">📍 طارم سفلی</div>
+    <div class="city-tag">📍 تاکستان</div>
+  </div>
+  <p class="city-note">و کلیه شهرستان‌ها و روستاهای استان قزوین</p>
+</div>
+
+<section id="about">
+  <div class="section-title">درباره ما</div>
+  <div class="section-sub">تجربه، دقت و مسئولیت</div>
+  <div class="about-box">
+    <div class="avatar">ح.ی</div>
+    <div class="about-text">
+      <h3>حسین یوسفی — کارشناس رسمی نقشه‌برداری</h3>
+      <p>با بیش از <strong>۱۰ سال سابقه</strong> در زمینه نقشه‌برداری و واخذ سند تک برگ در استان قزوین، با استفاده از تجهیزات پیشرفته روز دنیا از جمله GPS دیفرانسیل و توتال استیشن، خدمات دقیق، مستند و مطمئن ارائه می‌دهم.</p>
+    </div>
+  </div>
+  <div class="stats-row">
+    <div class="stat-box"><div class="num">+۱۰ سال</div><div class="lbl">سابقه فعالیت</div></div>
+    <div class="stat-box"><div class="num">+۵۰۰</div><div class="lbl">پروژه انجام‌شده</div></div>
+    <div class="stat-box"><div class="num">۸ شهرستان</div><div class="lbl">محدوده فعالیت</div></div>
+    <div class="stat-box"><div class="num">۱۰۰٪</div><div class="lbl">تضمین کیفیت</div></div>
+  </div>
+  <div class="features">
+    <div class="feat"><span class="f-icon">🏅</span><h4>کیفیت تضمینی</h4></div>
+    <div class="feat"><span class="f-icon">💻</span><h4>تجهیزات پیشرفته</h4></div>
+    <div class="feat"><span class="f-icon">🛡️</span><h4>تعهد و مسئولیت</h4></div>
+    <div class="feat"><span class="f-icon">🎯</span><h4>دقت بالا</h4></div>
+  </div>
+</section>
+
+<div class="contact-section" id="contact">
+  <div class="section-title">تماس با ما</div>
+  <div class="section-sub">کاری دقیق، مستند و مطمئن با ما</div>
+  <div class="contact-grid">
+    <div>
+      <div class="phone-box">
+        <span class="p-icon">📞</span>
+        <a href="tel:09199106459">۰۹۱۹۹۱۰۶۴۵۹</a>
+        <span>حسین یوسفی</span>
+      </div>
+      <div class="phone-box">
+        <span class="p-icon">📱</span>
+        <a href="tel:09196628480">۰۹۱۹۶۶۲۸۴۸۰</a>
+        <span>خط دوم</span></div><div class="phone-box"><span class="p-icon">📧</span><span>hoseinyousefi13721994@gmail.com</span></div><div class="phone-box"><span class="p-icon">📍</span><span>قزوین، خیابان جانبازان</span></div><div class="phone-box"><span class="p-icon">💬</span><span>ایتا: 09199106459</span></div><div class="phone-box"><span class="p-icon">💬</span><span>روبیکا: 09196628480</span>
+      </div>
+    </div>
+    <div class="cform">
+      <h3>درخواست مشاوره رایگان</h3>
+<form action="https://formsubmit.co/hoseinyousefi13721994@gmail.com" method="POST">
+<input type="hidden" name="_subject" value="درخواست جدید از سایت حسین یوسفی">
+      <input type="text" id="fn" placeholder="نام و نام خانوادگی" />
+      <input type="tel" id="fp" placeholder="شماره تماس" />
+      <select id="fs">
+        <option value="">نوع خدمت</option>
+        <option>نقشه UTM / سند تک برگ</option>
+        <option>نقشه کروکی ساختمان</option>
+        <option>تفکیک اراضی</option>
+        <option>نقشه هوایی / قدمت بنا</option>
+        <option>پیاده‌سازی فونداسیون</option>
+        <option>سایر</option>
+      </select>
+      <textarea id="fm" placeholder="توضیحات..."></textarea>
+      <button type="submit">ارسال درخواست</button></form>
+      <div class="success-msg" id="succ">✅ پیام شما ارسال شد. به زودی تماس می‌گیریم.</div>
+    </div>
+  </div>
+</div>
+
+<a href="tel:09199106459" class="floating-call">📞 تماس مستقیم</a>
+<footer>© ۱۴۰۳ حسین یوسفی — کارشناس رسمی نقشه‌برداری قزوین &nbsp;|&nbsp; <span>۰۹۱۹۹۱۰۶۴۵۹</span></footer>
+
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t) t.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+function sendForm(){
+  const n=document.getElementById('fn').value.trim();
+  const p=document.getElementById('fp').value.trim();
+  if(!n||!p){alert('لطفاً نام و شماره تماس را وارد کنید.');return;}
+  document.getElementById('succ').style.display='block';
+  document.getElementById('fn').value='';
+  document.getElementById('fp').value='';
+  document.getElementById('fs').value='';
+  document.getElementById('fm').value='';
+}
+</script>
+</body>
+</html>
